@@ -1,4 +1,6 @@
 ﻿
+#region Dars3
+
 //int intVaule1 = int.Parse(Console.ReadLine());
 //int intVaule2 = int.Parse(Console.ReadLine());
 
@@ -687,4 +689,14 @@ intVaule1 = 2;
 intVaule2 = 3;
 Console.WriteLine($"{Math.Pow(intVaule1,intVaule2)}");
 */
+#endregion
+#endregion
+
+// ---------------------------------------------------------------------------------------------------------------------------
+
+#region Dras4
+
+
+
+
 #endregion
