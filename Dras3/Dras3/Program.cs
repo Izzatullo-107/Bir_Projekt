@@ -691,12 +691,3 @@ Console.WriteLine($"{Math.Pow(intVaule1,intVaule2)}");
 */
 #endregion
 #endregion
-
-// ---------------------------------------------------------------------------------------------------------------------------
-
-#region Dras4
-
-
-
-
-#endregion
