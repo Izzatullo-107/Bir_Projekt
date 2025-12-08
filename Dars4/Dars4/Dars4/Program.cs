@@ -1,6 +1,4 @@
-﻿
-
-#region
+﻿#region
 /*
 //
 var text = "davay";
@@ -24,9 +22,13 @@ Console.WriteLine(result);
 #region Variables
 var text = string.Empty;
 var text2 = string.Empty;
+var text3 = string.Empty;
 var intValue1 = 0;
-var inValue2 = 0;
+var intValue2 = 0;
+var charValue = '\0';
 #endregion
+
+//--------------------------------------------------------------------------------------------------------------------------
 
 #region 1.4.0
 
@@ -432,6 +434,8 @@ text = "Salom@ Dunyo@!";
 Console.WriteLine(isCaunt(text));
 */
 #endregion
+
+//--------------------------------------------------------------------------------------------------------------------------
 
 #region 1.4.1
 /*
@@ -866,13 +870,809 @@ Console.WriteLine(noSpace(text));
 */
 #endregion
 
+//--------------------------------------------------------------------------------------------------------------------------
+
 #region 1.4.2
+/*
+// M: 1
+static string textAndText2(int intValue1, string text, string text2,int intValue2)
+{
+    if (text.Length < intValue1 || text2.Length < intValue2)
+    {
+        return string.Empty;
+    }
+
+    return text.Substring(0, intValue1) + text2.Substring(text2.Length - intValue2);
+}
+
+text = "Hello";
+text2 = "World";
+intValue1 = 2;
+intValue2 = 3;
+Console.WriteLine(textAndText2(intValue1, text, text2, intValue2));
 
 
+// M: 2
+static string charX2(string text, char ch)
+{
+    var result = string.Empty;
+    foreach (char i in text)
+    {
+        result += i;
+        if (i == ch)
+        {
+            result += ch;
+        }
+    }
+    return result;
+}
+
+text = "hello";
+charValue = 'o';
+Console.WriteLine(charX2(text, charValue));
 
 
+// M: 3
+static string charS1AndS2(char charValue, string text, string text2)
+{
+    var result = string.Empty;
+    for (var i = 0; i < text.Length - 1; i++)
+    { 
+        if(text[i]==charValue)
+        {
+            result += text2;
+        }
+        result += text[i];
+    }
+    return result;
+}
+
+text = "ab3cde3f";
+text2 = "X";
+charValue = '3';
+Console.WriteLine(charS1AndS2(charValue, text, text2));
 
 
+// M: 4
+static string charS1AndS2(char charValue, string text, string text2)
+{
+    var result = string.Empty;
+    for (var i = 0; i < text.Length - 1; i++)
+    {
+        result += text[i];
+        if (text[i] == charValue)
+        {
+            result += text2;
+        }
+    }
+    return result;
+}
 
+text = "ab3cde3f";
+text2 = "X";
+charValue = '3';
+Console.WriteLine(charS1AndS2(charValue, text, text2));
+
+
+// M: 5
+//static int cauntS2AndS1(string text2, string text)
+//{
+//    var count = 0;
+//    for (var i = 0; i < text2.Length-1; i++)
+//    {
+
+//        if (text2.IndexOf(text) != -1)
+//        {
+//            i++;
+//            count++;
+//        }
+//    }
+//    return count;
+//}
+static int cauntS2AndS1(string text, string text2)
+{
+    int count = 0;
+    int index = 0; // Qidirishni boshlash indeksi
+
+    // Asosiy satr (text) ichida izlanayotgan satrni (text2) qidiramiz
+    while ((index = text.IndexOf(text2, index)) != -1)
+    {
+        count++;
+        // Keyingi qidirishni topilgan joydan keyin darhol boshlash
+        index += text2.Length;
+    }
+    return count;
+}
+
+text = "hihihihello";
+text2 = "hi";
+Console.WriteLine(cauntS2AndS1(text, text2));
+
+
+// M: 6
+static string S1AndS2(string text, string text2)
+{
+    text = text.Remove(text.IndexOf(text2), text2.Length);
+    return text;
+}
+
+text = "abcpqrabcxyz";
+text2 = "abc";
+Console.WriteLine(S1AndS2(text, text2));
+
+
+// M: 7
+static string S1OldS2(string text, string text2)
+{
+    for (var i = text.Length - 1; i > -1; i--)
+    {
+        if (text.IndexOf(text2, i) != -1)
+        {
+            text = text.Remove(i, text2.Length);
+            return text;
+        }
+
+    }
+    return text;
+}
+
+text = "acpqrabcxyz";
+text2 = "abc";
+Console.WriteLine(S1OldS2(text, text2));
+
+
+// M: 8
+static string S1OldS2(string text, string text2)
+{
+    for (var i = text.Length - 1; i > -1; i--)
+    {
+        if (text.IndexOf(text2, i) != -1)
+        {
+            text = text.Remove(i, text2.Length);
+        }
+
+    }
+    return text;
+}
+
+text = "abcpqrabcxyzabc";
+text2 = "abc";
+Console.WriteLine(S1OldS2(text, text2));
+
+
+// M: 9
+static string S1OldS2(string text, string text2, string text3)
+{
+    var resault = string.Empty;
+    if (text.IndexOf(text2) != -1)
+    {
+        text = text.Substring(0, text.IndexOf(text2)) + text3
+             + text.Substring(text.IndexOf(text2) + text2.Length);
+
+        //return text;
+    }
+    return text;
+}
+
+text = "abcpqrabcxyz";
+text2 = "abc";
+text3 = "XYZ";
+Console.WriteLine(S1OldS2(text, text2, text3));
+
+
+// M: 10
+static string S1AndS2AndS3(string text, string text2,string text3)
+{
+    for (var i = text.Length - 1; i > -1; i--)
+    {
+        if (text.IndexOf(text2, i) != -1)
+        {
+            text = text.Substring(0, i) + text3
+             + text.Substring(i + text2.Length);
+            return text;
+        }
+
+    }
+    return text;
+}
+
+text = "abcpqrabcxyzabc";
+text2 = "abc";
+text3 = "XYZ";
+Console.WriteLine(S1AndS2AndS3(text, text2,text3));
+
+
+// M: 11
+static string S1AndS2AndS3(string text, string text2, string text3)
+{
+    for (var i = text.Length - 1; i > -1; i--)
+    {
+        if (text.IndexOf(text2, i) != -1)
+        {
+            text = text.Substring(0, i) + text3
+             + text.Substring(i + text2.Length);
+        }
+
+    }
+    return text;
+}
+
+text = "abcpqrabcxyzabc";
+text2 = "abc";
+text3 = "XYZ";
+Console.WriteLine(S1AndS2AndS3(text, text2, text3));
+
+
+// M: 12
+static string S1AndS2AndS3(string text)
+{
+    var caunt = 0;
+    var text2 = string.Empty;
+    if (text.IndexOf(' ') == -1)
+    {
+        return string.Empty;
+    }
+
+    for (var i = text.Length - 1; i > -1; i--)
+    {
+        if (text.IndexOf(text2, i) != -1)
+        {
+            caunt++;
+        }
+    }
+
+    if (caunt==1)
+    {
+        return string.Empty;
+    }
+    if(caunt > 1)
+    {
+        text = text.Remove(0, text.IndexOf(' ')+1);
+        text = text.Substring(0, text.IndexOf(' '));
+    }
+
+    return text;
+}
+
+text = "abc pq rabc xyzabc";
+Console.WriteLine(S1AndS2AndS3(text));
+
+
+// M: 13
+static bool catDog(string text)
+{
+    var cat = 0;
+    var dog = 0;
+    for (var i = text.Length - 1; i > -1; i--)
+    {
+        if (text.IndexOf("cat", i) != -1)
+        {
+            text = text.Remove(i, 3);
+            cat++;
+        }
+        if (text.IndexOf("dog", i) != -1)
+        {
+            text = text.Remove(i, 3);
+            dog++;
+        }
+    }
+    return cat == dog;
+}
+
+text = "catdogdogcat";
+Console.WriteLine(catDog(text));
+
+
+// M: 14
+static int countCode(string text)
+{
+    var count = 0;
+    for (var i = 0; i < text.Length - 3; i++)
+    {
+        if (text[i] == 'c' && text[i + 1] == 'o' && text[i + 3] == 'e')
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+text = "codecopecode";
+Console.WriteLine(countCode(text));
+
+
+// M: 15
+static bool endOther(string a, string b)
+{
+    a = a.ToLower();
+    b = b.ToLower();
+    if (a.Length < b.Length)
+    {
+        return b.EndsWith(a);
+    }
+    else
+    {
+        return a.EndsWith(b);
+    }
+}
+
+text = "Hiabc";
+text2 = "abc";
+Console.WriteLine(endOther(text, text2));
+
+
+// M: 16
+static bool xyzThere(string text)
+{
+    if (text.IndexOf('.') > text.IndexOf("xyz"))
+    {
+        return true;
+    }
+    return false;
+}
+
+text = "xyz.abc";
+Console.WriteLine(xyzThere(text));
+
+
+// M: 17
+static string mixString(string a, string b)
+{
+    var result = string.Empty;
+    var minLength = Math.Min(a.Length, b.Length);
+    for (var i = 0; i < minLength; i++)
+    {
+        result += a[i];
+        result += b[i];
+    }
+    if (a.Length > minLength)
+    {
+        result += a.Substring(minLength);
+    }
+    else if (b.Length > minLength)
+    {
+        result += b.Substring(minLength);
+    }
+    return result;
+}
+
+text = "abc";
+text2 = "XYZ123";
+Console.WriteLine(mixString(text, text2));
+
+
+// M: 18
+static string repeatEnd(string text, int n)
+{
+    var result = string.Empty; 
+    for (var i = 0; i < n; i++)
+    {
+        result += text.Substring(text.Length - n);
+    }
+    return result;
+}
+
+text = "Hello";
+Console.WriteLine(repeatEnd(text, 3));
+
+
+// M: 19
+static string repeatFront(string text, int n)
+{
+    var result = string.Empty;
+    for (var i = n; i > 0; i--)
+    {
+        result += text.Substring(0, i);
+    }
+    return result;
+}
+
+text = "Chocolate";
+Console.WriteLine(repeatFront(text, 4));
+
+
+// M: 20
+static string repeatSeparator(string text, string text2, int n)
+{
+    var result = string.Empty;
+    for (var i = 0; i < n; i++)
+    {
+        result += text;
+        if (i < n - 1)
+        {
+            result += text2;
+        }
+    }
+    return result;
+}
+
+text = "This";
+text2 = "And";
+Console.WriteLine(repeatSeparator(text, text2, 2));
+
+
+// M: 21
+static bool prefixAgain(string text, int n)
+{
+    var prefix = text.Substring(0, n);
+    for (var i = n; i <= text.Length - n; i++)
+    {
+        if (text.IndexOf(prefix,n)!=-1)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+text = "abcpqrabcxyz";
+Console.WriteLine(prefixAgain(text, 3));
+
+
+// M: 22
+static bool xyzMiddle(string text)
+{
+    var mid = text.Length / 2;
+    if (text.Length < 3)
+    {
+        return false;
+    }
+    if (text.Length % 2 == 0)
+    {
+        if (text.Substring(mid - 1, 3) == "xyz" || text.Substring(mid - 2, 3) == "xyz")
+        {
+            return true;
+        }
+    }
+    else
+    {
+        if (text.Substring(mid - 1, 3) == "xyz")
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+text = "A AxyzBB";
+Console.WriteLine(xyzMiddle(text));
+
+
+// M: 23
+static string getSandwich(string text)
+{
+    var firstIndex = text.IndexOf("bread");
+    var lastIndex = text.LastIndexOf("bread");
+    if (firstIndex == -1 || firstIndex == lastIndex)
+    {
+        return string.Empty;
+    }
+    return text.Substring(firstIndex + 5, lastIndex - (firstIndex + 5));
+}
+
+text = "breadjambread";
+Console.WriteLine(getSandwich(text));
+
+
+// M: 24
+static bool sameStarChar(string text)
+{
+    for (var i = 1; i < text.Length - 1; i++)
+    {
+        if (text[i] == '*')
+        {
+            if (text[i - 1] != text[i + 1])
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+text = "xy*yzz";
+Console.WriteLine(sameStarChar(text));
+
+
+// M: 25
+static string zipZap(string text)
+{
+    var result = string.Empty;
+    for (var i = 0; i < text.Length; i++)
+    {
+        if (i < text.Length - 2 && text[i] == 'z' && text[i + 2] == 'p')
+        {
+            result += "zp";
+            i += 2;
+        }
+        else
+        {
+            result += text[i];
+        }
+    }
+    return result;
+}
+
+text = "zzzopzop";
+Console.WriteLine(zipZap(text));
+
+
+// M: 26 
+static string plusOut(string text, string word)
+{
+    var result = string.Empty;
+    var i = 0;
+    while (i < text.Length)
+    {
+        if (i <= text.Length - word.Length && text.Substring(i, word.Length) == word)
+        {
+            result += word;
+            i += word.Length;
+        }
+        else
+        {
+            result += "+";
+            i++;
+        }
+    }
+    return result;
+}
+
+text = "12xy34xyabcxy";
+text2 = "xy";
+Console.WriteLine(plusOut(text, text2));
+
+
+// M: 27
+static string wordEnds(string text, string word)
+{
+    var result = string.Empty;
+
+    for (var i = 0; i <= text.Length - word.Length; i++)
+    {
+        if (text.Substring(i, word.Length) == word)
+        {
+            if (i > 0)
+            {
+                result += text[i - 1];
+            }
+            if (i + word.Length < text.Length)
+            {
+                result += text[i + word.Length];
+            }
+        }
+    }
+    return result;
+}
+
+text = "abcXY123XYijk";
+text2 = "XY";
+Console.WriteLine(wordEnds(text, text2));
+
+
+// M: 28
+static int countYZ(string text)
+{
+    var count = 0;
+    text = text.ToLower();
+    for (var i = 0; i < text.Length; i++)
+    {
+        if ((text[i] == 'y' || text[i] == 'z') &&
+            (i == text.Length - 1 || !char.IsLetter(text[i + 1])))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+text = "fez day";
+Console.WriteLine(countYZ(text));
+
+
+// M: 29
+static string withoutString(string text, string word)
+{
+    var result = string.Empty;
+    var i = 0;
+    while (i < text.Length)
+    {
+        if (i <= text.Length - word.Length && text.Substring(i, word.Length) == word)
+        {
+            i += word.Length;
+        }
+        else
+        {
+            result += text[i];
+            i++;
+        }
+    }
+    return result;
+}
+
+text = "Hello there";
+text2 = "llo";
+Console.WriteLine(withoutString(text, text2));
+
+// M: 30
+static bool equalIsNot(string text)
+{
+    var isCount = 0;
+    var notCount = 0;
+    for (var i = 0; i < text.Length; i++)
+    {
+        if (i <= text.Length - 2 && text.Substring(i, 2) == "is")
+        {
+            isCount++;
+        }
+        if (i <= text.Length - 3 && text.Substring(i, 3) == "not")
+        {
+            notCount++;
+        }
+    }
+    return isCount == notCount ;
+}
+
+text = "This is notnot";
+Console.WriteLine(equalIsNot(text));
+
+
+// M: 31
+static bool gHappy(string text)
+{
+    for (var i = 0; i < text.Length; i++)
+    {
+        if (text[i] == 'g')
+        {
+            if ((i > 0 && text[i - 1] == 'g') || (i < text.Length - 1 && text[i + 1] == 'g'))
+            {
+                continue;
+            }
+            return false;
+        }
+    }
+    return true;
+}
+
+text = "xxgggxyx";
+Console.WriteLine(gHappy(text));
+
+
+// M: 32
+static int countTriple(string text)
+{
+    var count = 0;
+    for (var i = 0; i < text.Length - 2; i++)
+    {
+        if (text[i] == text[i + 1] && text[i] == text[i + 2])
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+text = "abcXXXabc";
+Console.WriteLine(countTriple(text));
+
+
+// M: 33
+static int sumDigits(string text)
+{
+    var sum = 0;
+    foreach (char i in text)
+    {
+        if (char.IsDigit(i))
+        {
+            sum += (i - '0'); /// char ni int ga aylantirish
+        }
+    }
+    return sum;
+}
+
+text = "aa1bb2cc3";
+Console.WriteLine(sumDigits(text));
+
+
+// M: 34
+static string sameEnds(string text)
+{
+    var result = string.Empty;
+    for (var i = text.Length / 2; i > 0; i--)
+    {
+        if (text.Substring(0, i) == text.Substring(text.Length - i))
+        {
+            result = text.Substring(0, i);
+            break;
+        }
+    }
+    return result;
+}
+
+text = "abXYab";
+Console.WriteLine(sameEnds(text)); 
+
+
+// M: 35
+static int maxBlock(string text)
+{
+    var maxCount = 0;
+    var currentCount = 0;
+    for (var i = 0; i < text.Length; i++)
+    {
+        for (var j = 0; j < text.Length; j++)
+        {
+            if (text[i] == text[j])
+            {
+                currentCount++;
+            }
+        }
+        if (maxCount < currentCount)
+        {
+            maxCount = currentCount;
+        }
+        currentCount = 0;
+    }
+
+    return maxCount;
+}
+
+text = "hoopla";
+Console.WriteLine(maxBlock(text));
+
+// M: 36
+static int sumNumbers(string text)
+{
+    var sum = 0;
+    var currentNumber = string.Empty;
+
+    for (var i = 0; i < text.Length; i++)
+    {
+        if (char.IsDigit(text[i]))
+        {
+            currentNumber += text[i]; 
+        }
+        else
+        {
+            if (currentNumber != "")
+            {
+                sum += int.Parse(currentNumber);
+                currentNumber = ""; 
+            }
+        }
+    }
+    if (currentNumber != "")
+    {
+        sum += int.Parse(currentNumber);
+    }
+
+    return sum;
+}
+
+text = "abc123xyz";
+Console.WriteLine(sumNumbers(text));
+*/
+
+// M: 37
+static string notReplace(string text)
+{
+    var result = string.Empty;
+    for (var i = 0; i < text.Length; i++)
+    {
+        if (i <= text.Length - 2 && text.Substring(i, 2) == "is" &&
+            (i == 0 || !char.IsLetter(text[i - 1])) &&
+            (i + 2 == text.Length || !char.IsLetter(text[i + 2])))
+        {
+            result += "is not";
+            i++;
+        }
+        else
+        {
+            result += text[i];
+        }
+    }
+    return result;
+}
 
 #endregion
+//--------------------------------------------------------------------------------------------------------------------------
