@@ -1,0 +1,155 @@
+osson
+
+1. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+3 xonali elementlarini miqdorini toping.
+
+2. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Juft elementlarini miqdorini toping.
+
+3. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Toq elementlarini yig‘indisini toping.
+
+4. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+3 ga va 7 ga karrali elementlarini miqdorini toping.
+
+5. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+2 xonali toq elementlarini miqdorini va yig‘indisini toping.
+
+6. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+1 chi va oxirgi elementlarini almashtiring va ekranga 
+listni chiqaring.
+
+7. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Dastlabki 3 ta elementini yig‘indisini toping.
+
+8. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Oxirgi 3 ta elementini yig‘indisi toping.
+
+9. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Toq elementlar bn Juft elementlarini taqqoslang.
+Agar toqlari ko‘p bo‘lsa true aks holda false chiqaring.
+
+10. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Juft elementlarini 3 
+
+oshiring.
+
+11. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Agar hamma elementi 5 ga karrali bo‘lsa true aks 
+holda false chiqaring.
+
+12. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Agar dastlabki 3 ta elementi 2 xonali bo‘lsa 
+true aks holda false chiqaring.
+
+13. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Agar dastlabki 2 ta elementni juft va oxirgi 2 ta elementi toq 
+bo‘lsa true aks holda false chiqaring
+
+14. 
+N ta elementdan iborat 1 o‘lchamli list berilgan.
+Eng kichik elementini aniqlang.
+
+15. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Eng katta va eng kichik elementini yig‘indisini aniqlang.
+
+16. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Barcha 2 xonali elementlarni qiymatini 100 ga oshiring.
+
+17. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Musbat va Manfiy elementlarini miqdorini aniqlang.
+
+18. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+1 chi elementidan kichik bo‘lgan elementlarni miqdorini aniqlang.
+
+19. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Oxirgi elementida katta bo‘lgan elementlarni yig‘indisini aniqlang.
+
+20. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Agar barcha elementni 4 ga yoki 3 ga karrali bo‘lsa 
+"hello" aks holda "salom" ni chiqaring.
+
+qiyin
+
+21. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Agar elementlari o‘suvchi bo‘lsa true aks holda false chiqaring.
+
+22. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Agar elementlari kamayuvchi bo‘lsa true aks holda false chiqaring.
+
+23. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Eng katta elementi bilan eng kichik elementini joyini almashtiring. 
+Va listni chiqaring.
+
+24. 
+N ta elementdan iborat 1 o‘lchamli list berilgan. 
+Elementlar yig‘indisini aniqlang
+
+
+25. n ta elementdan tashkil topgan list berilgan. 
+list elementlari orasidan yig'indisi eng katta bo'ladigan 2 ta qo'shni 
+elementni chiqaruvchi  programma tuzilsin.
+
+26. n ta elementdan tashkil topgan list berilgan. 
+list elementlari orasidan chap qo'shnisidan katta 
+bo'lganlar sonini chiqaruvchi programma tuzilsin.
+
+27. n ta elementdan tashkil topgan 2 ta list berilgan. 
+listni mos elementlar ko'paytmasidan tashkil topgan yangi
+list hosil qiling va ekranga chiqaring.
+
+28. n ta elementdan tashkil topgan string list berilgan.
+'$' bilan boshlanadigan elementlar miqdorini aniqlang.
+
+juda qiyin
+
+29. n ta elementdan tashkil topgan string list berilgan. 
+Hamma belgisi katta harf bo'lgan elementlarini ekranga 
+chiqaruvchi dastur tuzing. 
+
+30.n ta butun sonlardan iborat list berilgan. 
+listdagi har bir juft sonni birinchi uchragan juft songa
+orttiruvchi programma tuzilsin.
+
+31.n ta butun sonlardan iborat list berilgan. 
+listdagi har bir toq sonni oxirgi toq songa orttiruvchi 
+programma tuzilsin.
+
+32.n ta elementdan tashkil topgan list berilgan. 
+listning juft indeksli elementlari orasidan kichigini 
+aniqlovchi programma tuzilsin. min(a0, a2, a4, ...)
+
+33.n ta elementdan tashkil topgan a va b list berilgan. 
+c listni hosil qiling. c[i] = max(a[i], b[i]),
+ ya'ni c listning i-elementi a va b listlarning 
+ i-elementlaridan kattasini qabul qilsin.
+
+34.n ta elementdan iborat butun sonlardan tashkil topgan a list berilgan.
+ a listning juft elementlaridan tashkil topgan b listini hosil qiling. 
+b list elementlari soni va elementlari chiqarilsin.
+
+
+
+
