@@ -1,0 +1,56 @@
+// osson
+
+1. 2 ta float berilsa ham, 3 ta float berilsa ham, 
+   2 ta string berilsa ham Add() funksiyasini yaratib bering overloading yordamida.
+
+2. Agar 2 ta a va b sonlari berilsa a soni b marta ekranga 
+chiqaruvchi Agar 1 ta a soni berilsa a soni a marta ekranga chiqaruvchi 
+repeat() nomli void funksiya (pratsedura) tuzib bering.
+
+3. 2 ta sonni parametr sifatida qabul qilganda ularning yig’indisini, 
+3 ta sonni parametr sifatida qabul qilganda esa ularning ko‘paytmasini
+hisoblab, natija sifatida qaytaruvchi calculate() overloading funksiyasini yozing.
+
+4. Agar funksiyaga int berilsa nech xonaligini, string berilsa nechta raqami 
+borligini aniqlab beruvchi getAmountDigit() nomli overloading function yarating.
+
+5. Funksiayaga 3 ta son berilsa ham, 4 ta son berilsa ham, 5 ta son berilsa
+ham kattasini aniqlab beruvchi findMax() funksiyasini yaratib bering.
+
+6. Parametr sifatida 1 ta son berilsa 1 dan shu songacha ko'paytmani, 2
+ ta son berilsa 1- sondan 2- songacha oraliqdagi sonlar ko'paytmasini, 3 
+ ta son berilsa shu sonlarni o'zini ko'paytmasini natija sifatida
+ qaytaruvchi multiplication() nomli funksiyani function overloading orqali
+ yozing.
+ 
+ multiplication(5)     => 120 because => (1*2*3*4*5)
+ multiplication(4,7)   => 840 because => (4*5*6*7)
+ multiplication(2,8,5) => 80  because => (2*8*5) 
+
+qiyin
+
+
+7. ta son berilgan. Shu sonni necha xonali ekanligini rekursiya orqali aniqlang.
+
+8. int toifasida a va b qiymatni qabul qiluvchi va a dan b gacha
+  barcha sonlarni yig‘indisini aniqlovchi int turdagi recursive funksiya
+  yozing.
+
+9. 1 dan boshlab foydalanuvchi tamonidan kiritilgan n sonigacha bo‘lgan
+  sonlarning kublarini yig‘indisini hisoblovchi dastur tuzilsin.
+  Misol uchun:
+  n = 7
+  Natija: S = 1^3 + 2^3 + 3^3 + 4^3+ 5^3+ 6^3+ 7^3
+
+
+juda qiyin
+
+10. c++ dasturlash tilidagi max() ni yaratib bering.
+11. c++ dasturlash tilidagi abs() ni yaratib bering.
+12. c++ dasturlash tilidagi isupper() ni yaratib bering.
+13. c++ dasturlash tilidagi toUpper() ni yaratib bering.
+14. c++ dasturlash tilidagi isdigit() ni yaratib bering.
+15. c++ dasturlash tilidagi islower() ni yaratib bering.
+16. c++ dasturlash tilidagi tolower() ni yaratib bering.
+17. c++ dasturlash tilidagi pow() ni yaratib bering.
+
